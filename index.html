@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>сюрпрайз</title>
+		<style>
+			body {
+				margin: 0;
+				overflow: hidden;
+				background-color: #000;
+				color: #fff;
+				font-family: Arial, sans-serif;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				position: relative;
+			}
+			#scream {
+				display: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				object-fit: cover; /* Обеспечивает покрытие всего экрана */
+			}
+			#scareButton {
+				position: absolute;
+				z-index: 10; /* Кнопка поверх скримера */
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id="scareButton">Нажмите, если осмелитесь!</h1>
+		<img id="scream" src="cpoko.jpg" alt="Скример" />
+		<audio id="screamSound" src="oppp.mp3" preload="auto"></audio>
+
+		<script>
+			document
+				.getElementById('scareButton')
+				.addEventListener('click', function () {
+					const screamImg = document.getElementById('scream')
+					const screamSound = document.getElementById('screamSound')
+
+					screamImg.style.display = 'block' // Показываем изображение скримера
+					screamSound.play() // Запускаем звук
+				})
+		</script>
+	</body>
+</html>
